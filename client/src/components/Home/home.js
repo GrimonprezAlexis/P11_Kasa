@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import LogementsList from './logementsList';
+
 import './home.scss';
 
 import { Link } from 'react-router-dom';
@@ -47,11 +49,18 @@ const Home = ({ match }) => {
                 <Link to={`${match.url}`} className="header__navbar__link">A Propos</Link>
             </nav>
         </header>
-{/*         <main className="container__main" id="main">{
-            photographersFiltered.map(( p, index ) => (
-                <PhotographerList photographer={p} key={index}/> 
+
+        <div className="banner">
+            <h1>Chez vous, partout et ailleurs</h1>
+            <img src={`${window.location.origin}/img/banner.png`} alt="Fôret et mer" className="banner__img"/>
+        </div>
+
+
+        <main className="container__main" id="main">{
+            logements.map(( l, index ) => (
+                <LogementsList logement={l} key={index} />
             ))
-        }</main> */}
+        }</main>
         </>
     )
 }
