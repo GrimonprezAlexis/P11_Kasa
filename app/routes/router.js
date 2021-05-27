@@ -1,4 +1,5 @@
 const cors = require('cors');
+const data = require('../../data/data.json');
 
 module.exports = (router) => {
 
@@ -10,6 +11,9 @@ module.exports = (router) => {
         ];
 
         res.json(customers);
+    });
+    router.get('/logements', cors(), (req, res) => {
+        res.send(data);
     });
     return router;
 }
