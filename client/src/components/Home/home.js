@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import './home.css';
+import './home.scss';
 
 import { Link } from 'react-router-dom';
 
@@ -42,11 +42,9 @@ const Home = ({ match }) => {
                 <img src={`${window.location.origin}/img/logo.png`}  alt="Kasa Home page" className="header__logo"/>
             </Link>
 
-            <nav className="menu">
-                <ul>
-                    <li><u>Accueil</u></li>
-                    <li>A Propos</li>
-                </ul>
+            <nav className="header__navbar">
+                <Link to={`${match.url}`} className="header__navbar__link" data-active="true">Accueil</Link>
+                <Link to={`${match.url}`} className="header__navbar__link">A Propos</Link>
             </nav>
         </header>
 {/*         <main className="container__main" id="main">{

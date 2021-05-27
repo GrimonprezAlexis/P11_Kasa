@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types'
 import {connect } from 'react-redux';
 import {getCustomers} from '../../store/actions/customer'
-import './customers.css';
+import './customers.scss';
 
 class Customers extends Component {
 
