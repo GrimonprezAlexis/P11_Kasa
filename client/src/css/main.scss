@@ -5,6 +5,9 @@
 # Import
 --------------------------------------------------------------*/
 @import "./reset.scss"; //Reset CSS
+@import "./boostrap/bootstrap.scss"; //Boostrap 4.0 (https://grafikart.fr/tutoriels/sass-bootstrap-1110#autoplay)
+
+
 @import "./variables.scss"; //Variables
 @import "./modal.scss"; //Modal
 @import "./animations.scss"; //Animations
@@ -26,6 +29,7 @@
     font-weight: 500;
 }
 
+
 html {
     height: 100%; 
     scroll-behavior: smooth;
@@ -42,7 +46,7 @@ body {
     overflow-x: hidden;
 }
 
-.container {
+/* .container {
     max-width: 1920px;
     display: flex;
     flex-flow: row wrap;
@@ -53,12 +57,10 @@ body {
     &__main {
         display: flex;
         flex-flow: row wrap;
-        padding-left: 4rem;
-        padding-right: 4rem;
-        padding-top: 3rem;
+        justify-content: space-around;
+        padding: 2rem;
     }
-}
-
+} */
 
 ul {
   padding: 0;
@@ -70,4 +72,12 @@ a {
 }
 input:focus, button:focus{
     outline-color: $color__primary;
+}
+
+.mb-5rem {
+    margin-bottom: 5rem;
+}
+
+.mb-1rem {
+    margin-bottom: 1rem;
 }

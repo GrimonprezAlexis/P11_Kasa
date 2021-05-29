@@ -39,7 +39,57 @@ const Home = ({ match }) => {
 
     return (
         <>
-        <header className="container header" role="banner">
+        <header>
+            <div className="container">
+                <nav className="header">
+                    <Link to={`${match.url}`}>
+                        <img src={`${window.location.origin}/img/logo.png`}  alt="Kasa Home page" className="header__logo"/>
+                    </Link>
+                    <ul className="nav navbar">
+                        <li><Link to={`${match.url}`} data-active="true">Accueil</Link></li>
+                        <li><Link to={`${match.url}`}>A Propos</Link></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div className="mb-5rem"></div>
+
+        <div className="container">
+            <div className="banner">
+                <h1>Chez vous, partout et ailleurs</h1>
+                <img src={`${window.location.origin}/img/banner.png`} alt="Fôret et mer" className="banner__img"/>
+            </div>
+        </div>
+        <div className="mb-1rem"></div>
+
+        <main className="container">
+            <div className="logements">{
+                logements.map(( l, index ) => (
+                    <LogementsList logement={l} key={index} />
+                ))
+            }</div>
+        </main>
+
+
+
+
+
+{/* 
+        <main class="container" id="main">
+        {
+        logements.map(( l, index ) => (
+            <LogementsList logement={l} key={index} />
+        ))
+        }
+        </main> */}
+
+
+
+
+
+
+
+{/*         <header className="container header" role="banner">
             <Link to={`${match.url}`}>
                 <img src={`${window.location.origin}/img/logo.png`}  alt="Kasa Home page" className="header__logo"/>
             </Link>
@@ -50,17 +100,22 @@ const Home = ({ match }) => {
             </nav>
         </header>
 
-        <div className="banner">
-            <h1>Chez vous, partout et ailleurs</h1>
-            <img src={`${window.location.origin}/img/banner.png`} alt="Fôret et mer" className="banner__img"/>
-        </div>
+        <div className="container">
+            <div className="banner">
+                <h1>Chez vous, partout et ailleurs</h1>
+                <img src={`${window.location.origin}/img/banner.png`} alt="Fôret et mer" className="banner__img"/>
+            </div>
 
-
-        <main className="container__main" id="main">{
+            <main class="container__main" id="main">
+            {
             logements.map(( l, index ) => (
                 <LogementsList logement={l} key={index} />
             ))
-        }</main>
+            }
+            </main>
+
+
+        </div> */}
         </>
     )
 }
