@@ -1,12 +1,11 @@
 import React, { Component } from 'react'
 import { Provider } from 'react-redux'
-import logo from './logo.svg'
 import './App.scss'
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 import store from './store'
-import Customers from './components/Customer/customers'
 import Home from './components/Home/home'
+import LogementDetail from './components/Logements/logementDetail'
 
 class App extends Component {
 
@@ -16,6 +15,7 @@ class App extends Component {
         <Router>
           <Switch>
             <Route exact path="/" component={Home} />
+            <Route exact path="/:id" component={LogementDetail} />
           </Switch>
         </Router>
       </Provider>

@@ -1,16 +1,10 @@
 import React, { useState, useEffect } from "react";
-import LogementsList from './logementsList';
-
+import Header from '../Header/header';
+import LogementsList from '../Logements/logementsList';
 import './home.scss';
 
-import { Link } from 'react-router-dom';
-
-
 const Home = ({ match }) => {
-
   const [logements, setLogements] = useState([]);
-//  const [clickedItem, setClickedItem] = useState(null);
-
 
   //replace componentDidMonth
     useEffect(() => {
@@ -23,36 +17,9 @@ const Home = ({ match }) => {
         const data = await response.json();
         setLogements(data);
     }
-
-/*     //Filter photographer by selectedTag
-    const handleFilterByTag = (e) => {
-        e.preventDefault();
-        const selectedTag = e.target.textContent.slice(1).toLowerCase();
-        const wantedPhotographers = photographers.filter(photographer => { 
-            return photographer.tags.indexOf(selectedTag) > -1; 
-        });
-        setSearchPhotographers(wantedPhotographers);
-        let tagEvent = e ? parseInt(e.target.parentElement.id, 10) : null;
-        setClickedItem(tagEvent);
-    } */
-
-
     return (
         <>
-        <header>
-            <div className="container">
-                <nav className="header">
-                    <Link to={`${match.url}`}>
-                        <img src={`${window.location.origin}/img/logo.png`}  alt="Kasa Home page" className="header__logo"/>
-                    </Link>
-                    <ul className="nav navbar">
-                        <li><Link to={`${match.url}`} data-active="true">Accueil</Link></li>
-                        <li><Link to={`${match.url}`}>A Propos</Link></li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
-        <div className="mb-5rem"></div>
+        <Header match={match.url}></Header>
 
         <div className="container">
             <div className="banner">

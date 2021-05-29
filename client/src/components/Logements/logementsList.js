@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { Route, Link } from 'react-router-dom';
 
 
@@ -8,18 +7,12 @@ import { Route, Link } from 'react-router-dom';
 const LogementsList = ({ logement}) => {
     return (
         <>
-        <article class="logements__main">
+        <article className="logements__main">
+        <Link to={`/${logement.id}`}>
             <img src={`${window.location.origin}/img/logement_img.png`}  alt="Fond Logement page"/>
             <span className="logements__title">{logement.title}</span>
+        </Link>
         </article>
-
-
-{/*         <div className="logement col-md-3" id={`logement-${logement.id}`}>
-            <img src={`${window.location.origin}/img/logement_img.png`}  alt="Fond Logement page" className="header__logo"/>
-            <Link to={`/${logement.id}`} className="logement__img__link">
-                <h2>{logement.title}</h2>
-            </Link>
-        </div> */}
         </>
     )
 }
