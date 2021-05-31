@@ -79,6 +79,73 @@
     }
  }
 
+ .coverImg {
+    border-radius: 25px;
+    mix-blend-mode: normal;
+    width: 1240px;
+    height: 415px;
+    left: 100px;
+    top: 128px;
+    object-fit: cover;
+ }
+
+ .logementDetail {
+     h1 {
+        @extend %font-style;
+        font-size: 36px;
+        line-height: 51px;
+        color: $color__primary;
+        margin-block-end: 0em;
+     }
+
+     &__location {
+        @extend %font-style;
+        font-size: 18px;
+        line-height: 26px;        
+        color: $color__primary;
+     }
+     &__tag {
+        display: flex;
+        margin-top: 1rem;
+
+        li {
+            background: $color__primary;
+            border-radius: 10px;
+            margin-right: 1rem;
+            padding: 0.1rem 2rem;
+            @extend %font-style;
+            font-size: 14px;
+            line-height: 20px;
+            text-align: center;
+            color: #FFFFFF;
+        }
+     }
+     &__host {
+        display: flex;
+        justify-content: space-between;
+     }
+     &__hostname {
+         @extend %font-style;
+         font-size: 18px;
+         line-height: 26px;
+         color: $color__primary;
+         text-align: end;
+     }
+     &__img {
+        clip-path: ellipse(50% 50%);
+        object-fit: cover;
+        width: 64px;
+        height: 64px;
+        margin-top: -5px;
+     }
+     &__rate {
+        margin-top: 1rem;
+        img {
+            margin-right: .5rem;
+        }
+     }
+ }
+
 @media screen and (min-width: 320px) and (max-width:992px){
     .header {
         padding: 1rem;

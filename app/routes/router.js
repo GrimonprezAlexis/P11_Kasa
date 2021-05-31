@@ -17,7 +17,7 @@ module.exports = (router) => {
     router.get('/logements', cors(), (req, res) => {
         res.send(data);
     });
-    //http://localhost:5000/api/logements/243
+    //http://localhost:5000/api/logements/c67ab8a7
     router.get('/logements/:id', cors(), (req, res, next) => {
         let logement = data.find((logement) => { 
             return logement.id == req.params.id;
