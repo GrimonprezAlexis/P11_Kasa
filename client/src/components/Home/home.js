@@ -19,7 +19,7 @@ const Home = ({ match }) => {
     }
     return (
         <>
-        <Header match={match.url}></Header>
+        <Header></Header>
         <div className="mb-5rem"></div>
 
         <div className="container">

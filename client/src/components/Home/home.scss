@@ -90,14 +90,13 @@
  }
 
  .logementDetail {
-     h1 {
+     &__title {
         @extend %font-style;
         font-size: 36px;
         line-height: 51px;
         color: $color__primary;
         margin-block-end: 0em;
      }
-
      &__location {
         @extend %font-style;
         font-size: 18px;
@@ -144,6 +143,39 @@
             margin-right: .5rem;
         }
      }
+     &__dropdown {
+        padding: 0;
+        flex: 0 0 46%;
+        max-width: 46%;
+
+        header {
+            background: $color__primary;
+            border-radius: 10px;
+            padding: 0.5rem 1rem;
+            @extend %font-style;
+            font-size: 18px;
+            line-height: 26px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+
+            img {
+                height: fit-content;
+                align-self: center;
+            }
+        }
+        &__text {
+            background: #F7F7F7;
+            border-radius: 10px;
+            @extend %font-style;
+            font-size: 18px;
+            line-height: 26px;
+            color: $color__primary;
+            padding: 1.5rem 1rem;
+        }
+     }
+
+
  }
 
 @media screen and (min-width: 320px) and (max-width:992px){
