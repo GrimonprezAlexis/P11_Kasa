@@ -100,7 +100,6 @@ input:focus, button:focus{
     max-width: 46%;
 }
 
-
 .dropdown {
     padding: 0;
     header {
@@ -127,5 +126,33 @@ input:focus, button:focus{
         line-height: 26px;
         color: $color__primary;
         padding: 1.5rem 1rem;
+    }
+}
+
+
+/* about page **/
+.accordion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: -webkit-fill-available;
+}
+.card-body {
+    padding: 0;
+}
+.card-header {
+    background: $color__primary;
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+    @extend %font-style;
+    font-size: 18px;
+    line-height: 26px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+
+    img {
+        height: fit-content;
+        align-self: center;
     }
 }

@@ -84,14 +84,14 @@ const LogementDetail = ({ match }) => {
                 <div className="col-md-5custom dropdown">
                     <header>
                         <span>Description</span>
-                        <img src={`${window.location.origin}/img/dropdown_arrow.png`} alt="Dropdown arrow"/>
+                        <img src={`${window.location.origin}/img/arrow-up.png`} alt="Dropdown arrow"/>
                     </header>
                     <p className="dropdown__text">{logementById.description}</p>
                 </div>
                 <div className="col-md-5custom dropdown">
                     <header>
                         <span>Equipements</span>
-                        <img src={`${window.location.origin}/img/dropdown_arrow.png`} alt="Dropdown arrow"/>
+                        <img src={`${window.location.origin}/img/arrow-up.png`} alt="Dropdown arrow"/>
                     </header>
                     <ul className="dropdown__text">
                         {equipments.map((equipment, index) => {
