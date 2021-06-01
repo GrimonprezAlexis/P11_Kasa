@@ -19,7 +19,7 @@ const Home = ({ match }) => {
     }
     return (
         <>
-        <Header></Header>
+        <Header isHomePage={true}></Header>
         <div className="mb-5rem"></div>
 
         <div className="container">

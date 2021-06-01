@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import store from './store'
 import Home from './components/Home/home'
 import LogementDetail from './components/Logements/logementDetail'
+import error404 from './components/Error/404'
 
 class App extends Component {
 
@@ -15,7 +16,8 @@ class App extends Component {
         <Router>
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/:id" component={LogementDetail} />
+            <Route exact path="/logements/:id" component={LogementDetail} />
+            <Route exact path="/error404" component={error404} />
           </Switch>
         </Router>
       </Provider>

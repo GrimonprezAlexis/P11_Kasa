@@ -4,7 +4,7 @@ import Header from '../Header/header';
 
 
 const LogementDetail = ({ match }) => {
-    const [logementById, setLogements] = useState([]);
+    const [logementById, setLogements] = useState({});
     const [tags, setTags] = useState([]);
     const [equipments, setEquipments] = useState([]);
 
@@ -16,7 +16,7 @@ const LogementDetail = ({ match }) => {
 
     //Get the logements from API
     const fetchLogements = async () => {
-        const response = await fetch(`api/logements/${match.params.id}`);
+        const response = await fetch(`/api/logements/${match.params.id}`);
         const data = await response.json();
         setLogements(data);
         setTags(data.tags);
@@ -30,7 +30,7 @@ const LogementDetail = ({ match }) => {
 
     return (
         <>
-        <Header></Header>
+        <Header isHomePage={false}></Header>
         <div className="mt-2rem"></div>
         <div className="container">
             <img src={logementById.cover} alt="Cover logement" className="coverImg"/>

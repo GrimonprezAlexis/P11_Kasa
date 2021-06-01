@@ -8,7 +8,7 @@ const LogementsList = ({ logement}) => {
     return (
         <>
         <article className="logements__main">
-        <Link to={`/${logement.id}`}>
+        <Link to={`/logements/${logement.id}`}>
             <img src={`${window.location.origin}/img/logement_img.png`}  alt="Fond Logement page"/>
             <span className="logements__title">{logement.title}</span>
         </Link>
