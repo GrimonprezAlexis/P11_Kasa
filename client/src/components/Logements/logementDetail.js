@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 import '../Home/home.scss'; 
 import Header from '../Header/header';
 
+import Carousel from 'react-bootstrap/Carousel'
 
 const LogementDetail = ({ match }) => {
     const [logementById, setLogements] = useState({});
     const [tags, setTags] = useState([]);
     const [equipments, setEquipments] = useState([]);
+    const [pictures, setPictures] = useState([]);
 
 
   //replace componentDidMonth
@@ -21,6 +23,7 @@ const LogementDetail = ({ match }) => {
         setLogements(data);
         setTags(data.tags);
         setEquipments(data.equipments);
+        setPictures(data.pictures)
     }
 
     const getNameIndex = (str, index) => {
@@ -33,7 +36,22 @@ const LogementDetail = ({ match }) => {
         <Header isHomePage={false}></Header>
         <div className="mt-2rem"></div>
         <div className="container">
-            <img src={logementById.cover} alt="Cover logement" className="coverImg"/>
+            
+            <Carousel>
+            {pictures.map((picture, index) => {
+            return (
+                <Carousel.Item interval={1000} key={index}>
+                    <img
+                    className="coverImg"
+                    src={picture}
+                    alt={`${index} slide`}
+                    key={`${index}`}
+                    />
+                </Carousel.Item>
+            )
+            })}
+            </Carousel>
+
             <div className="mt-2rem flexBetween">
                 <section className="logementDetail">
                     <p className="logementDetail__title">{logementById.title}</p>
@@ -63,19 +81,19 @@ const LogementDetail = ({ match }) => {
                 </section>
             </div>
             <div className="flexBetween mt-1rem">
-                <div className="col-md-5 logementDetail__dropdown">
+                <div className="col-md-5custom dropdown">
                     <header>
                         <span>Description</span>
                         <img src={`${window.location.origin}/img/dropdown_arrow.png`} alt="Dropdown arrow"/>
                     </header>
-                    <p className="logementDetail__dropdown__text">{logementById.description}</p>
+                    <p className="dropdown__text">{logementById.description}</p>
                 </div>
-                <div className="col-md-5 logementDetail__dropdown">
+                <div className="col-md-5custom dropdown">
                     <header>
                         <span>Equipements</span>
                         <img src={`${window.location.origin}/img/dropdown_arrow.png`} alt="Dropdown arrow"/>
                     </header>
-                    <ul className="logementDetail__dropdown__text">
+                    <ul className="dropdown__text">
                         {equipments.map((equipment, index) => {
                             return (
                                 <li key={index}><span aria-hidden="false">{equipment}</span></li>

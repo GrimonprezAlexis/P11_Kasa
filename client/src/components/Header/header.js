@@ -2,7 +2,7 @@ import React from "react";
 import '../Home/home.scss';
 import { Link } from 'react-router-dom';
 
-const Header = ({ isHomePage }) => {
+const Header = ({ isHomePage, isAboutPage }) => {
     return (
         <>
         <header>
@@ -13,7 +13,7 @@ const Header = ({ isHomePage }) => {
                     </Link>
                     <ul className="nav navbar">
                         <li><Link to='/' data-active={isHomePage}>Accueil</Link></li>
-                        <li><Link to='/about'>A Propos</Link></li>
+                        <li><Link to='/about' data-active={isAboutPage}>A Propos</Link></li>
                     </ul>
                 </nav>
             </div>
