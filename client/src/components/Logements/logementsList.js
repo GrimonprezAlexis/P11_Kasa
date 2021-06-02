@@ -9,7 +9,7 @@ const LogementsList = ({ logement}) => {
         <>
         <article className="logements__main">
         <Link to={`/logements/${logement.id}`}>
-            <img src={`${window.location.origin}/img/logement_img.png`}  alt="Fond Logement page"/>
+            <img src={`${logement.cover}`}  alt="Fond Logement page" className="logements__main__img"/>
             <span className="logements__title">{logement.title}</span>
         </Link>
         </article>

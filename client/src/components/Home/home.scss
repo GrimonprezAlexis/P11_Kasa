@@ -67,6 +67,10 @@
         max-width: 28%;
         padding-top: 2rem;
         padding-bottom: 1rem;
+
+        &__img {
+            border-radius: 10px;
+        }
     }
     &__title {
         position: absolute;
