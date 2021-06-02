@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import '../Home/home.scss'; 
 import Header from '../Header/header';
+import Rates from './rates'
 
 import Carousel from 'react-bootstrap/Carousel'
 
@@ -9,6 +10,7 @@ const LogementDetail = ({ match }) => {
     const [tags, setTags] = useState([]);
     const [equipments, setEquipments] = useState([]);
     const [pictures, setPictures] = useState([]);
+    const [counter, setCounter] = useState(0);
 
 
   //replace componentDidMonth
@@ -23,14 +25,15 @@ const LogementDetail = ({ match }) => {
         setLogements(data);
         setTags(data.tags);
         setEquipments(data.equipments);
-        setPictures(data.pictures)
+        setPictures(data.pictures);
     }
 
+    //Splt string and get the index of string
+    //Ex: Alexis Grimonprez
     const getNameIndex = (str, index) => {
         let name = str.split(" ");
         return name[index];
     }
-
     return (
         <>
         <Header isHomePage={false}></Header>
@@ -71,13 +74,7 @@ const LogementDetail = ({ match }) => {
                             <img src={logementById.host.picture} alt="Hostname" className="logementDetail__img" />                
                         </div>
                     }
-                    <div className="logementDetail__rate">
-                        <img src={`${window.location.origin}/img/rate_full.png`} alt="Rate full"/>
-                        <img src={`${window.location.origin}/img/rate_full.png`} alt="Rate full"/>
-                        <img src={`${window.location.origin}/img/rate_full.png`} alt="Rate full"/>
-                        <img src={`${window.location.origin}/img/rate_empty.png`} alt="Rate empty"/>
-                        <img src={`${window.location.origin}/img/rate_empty.png`} alt="Rate empty"/>
-                    </div>
+                    <Rates logementById={logementById}></Rates>
                 </section>
             </div>
             <div className="flexBetween mt-1rem">
