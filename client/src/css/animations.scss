@@ -75,3 +75,33 @@
         transform: translateY(0);
     }
 }
+//Replace the method delay normaly with Jquery for delay between div
+@for $i from 0 to 9 {
+  .fade-in-delay-#{$i} {
+    animation-delay:  #{$i/10}s;
+  }
+}
+@keyframes fade-item-menu {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1)
+    }
+}
+@-moz-keyframes fade-item-menu { /* sur Firefox */
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1)
+    }
+}
+@-webkit-keyframes fade-item-menu { /* sur Safari et Chrome */
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1)
+    }
+}

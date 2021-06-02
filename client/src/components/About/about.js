@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Header from '../Header/header';
 import {Accordion, Card} from 'react-bootstrap';
 
@@ -45,7 +45,7 @@ const Error404 = ({ match }) => {
                             <Accordion.Toggle as={Card.Header} eventKey={about.id}>
                                 <span>{about.title}</span>
                                 <img src={
-                                    activeKey == index ? 
+                                    activeKey === index.toString() ? 
                                     `${window.location.origin}/img/arrow-down.png` : 
                                     `${window.location.origin}/img/arrow-up.png`
                                 } alt="dropdown arrow" className={'arrow'}/>

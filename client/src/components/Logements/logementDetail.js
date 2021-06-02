@@ -10,8 +10,6 @@ const LogementDetail = ({ match }) => {
     const [tags, setTags] = useState([]);
     const [equipments, setEquipments] = useState([]);
     const [pictures, setPictures] = useState([]);
-    const [counter, setCounter] = useState(0);
-
 
   //replace componentDidMonth
     useEffect(() => {

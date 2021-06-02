@@ -33,7 +33,7 @@ const Home = ({ match }) => {
         <main className="container">
             <div className="logements">{
                 logements.map(( l, index ) => (
-                    <LogementsList logement={l} key={index} />
+                    <LogementsList logement={l} key={index} index={index} />
                 ))
             }</div>
         </main>

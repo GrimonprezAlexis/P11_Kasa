@@ -9,7 +9,6 @@
 
 
 @import "./variables.scss"; //Variables
-@import "./modal.scss"; //Modal
 @import "./animations.scss"; //Animations
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
@@ -18,11 +17,6 @@
 /*--------------------------------------------------------------
 # Legacy css
 --------------------------------------------------------------*/
-%bold_text {
-    font-weight: 900;
-    font-size: 1.4rem;
-}
-
 %font-style {
     font-family: $font-family;
     font-style: normal;
@@ -46,22 +40,6 @@ body {
     overflow-x: hidden;
 }
 
-/* .container {
-    max-width: 1920px;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    padding: 2rem 4rem;
-    align-items: center;
-
-    &__main {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-around;
-        padding: 2rem;
-    }
-} */
-
 ul {
   padding: 0;
   list-style: none;
@@ -70,24 +48,14 @@ a {
     text-decoration: none;
     color: inherit;
 }
-input:focus, button:focus{
-    outline-color: $color__primary;
-}
 
-.mb-5rem {
-    margin-bottom: 5rem;
-}
-
-.mt-2rem {
-    margin-top: 2rem;
-}
-
-.mb-1rem {
-    margin-bottom: 1rem;
-}
-
-.mt-1rem {
-    margin-top: 1rem;
+@for $i from 0 to 10 {
+  .mb-#{$i}rem {
+    margin-bottom: #{$i}rem;
+  }
+  .mt-#{$i}rem {
+    margin-top: #{$i}rem;
+  }
 }
 
 .flexBetween {
