@@ -25,9 +25,9 @@ Développer l'ensemble de l'application du Front end au Back-end / data en React
 - Pour le défilement des photos dans la galerie (composant Gallery) :
 	- Si le user se trouve à la première image et il clique sur "image précédente", la galerie affiche la dernière image. 
 	- Inversement, quand limage affichée est la dernière de la galerie, si l'utilisateur clique sur "image suivante", la galerie affiche la première image. 
-	- Si ny a quune seule image, les boutons "suivant" et "précédent" napparaissent pas.
+	- Si ny a qu'une seule image, les boutons "suivant" et "précédent" napparaissent pas.
 	- La galerie doit toujours rester de la même hauteur, celle indiquée sur la maquette Figma. Les images seront donc coupées et centrées dans le cadre de limage.
-- Collapse : Par défaut, les Collapse sont fermés à linitialisation de la page. 
+- Collapse : Par défaut, les Collapses sont fermés à linitialisation de la page. 
 - Si le Collapse est ouvert, le clic de lutilisateur permet de le fermer.
 	- Inversement, si le Collapse est fermé, un clic permet de l'ouvrir.
 
