@@ -65,7 +65,7 @@ const LogementDetail = ({ match }) => {
                         })}
                     </ul>
                 </section>
-                <section>
+                <section className="row-reverse">
                     {logementById.host && logementById.host.name && logementById.host.picture &&
                         <div className="logementDetail__host">
                             <span className="logementDetail__hostname">{getNameIndex(logementById.host.name, 0)} <br></br> {getNameIndex(logementById.host.name, 1)}</span>

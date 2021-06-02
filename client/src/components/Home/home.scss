@@ -231,7 +231,6 @@
         }
     }
 
-
     .logements {
         flex-flow: column wrap;
         padding: 0;
@@ -242,6 +241,78 @@
             max-width: 100%;
         }
     }
+
+    .coverImg {
+        height: 100vw;
+    }
+
+    .flexBetween {
+        flex-flow: column wrap;
+    }
+
+    .row-reverse {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logementDetail {
+        &__img {
+            width: 15vw;
+            height: 15vw;
+            margin-left: 0.5rem;
+        }
+        &__title {
+            font-size: 18px;
+            line-height: 142.6%;
+        }
+        &__location {
+            font-size: 14px;
+            line-height: 142.6%;
+        }
+        &__tag li {
+            font-size: 10px;
+            line-height: 142.6%;
+            padding: 0.2rem 0.2rem;
+        }
+        &__hostname {
+            font-size: 12px;
+            line-height: 142.6%;
+            display: flex;
+            align-items: center;
+        }
+        &__rate {
+            margin-top: 1rem;
+            img {
+                margin-right: .1rem;
+                width: 4vw;
+            }
+        }
+    }
+
+    .col-md-5custom {
+        flex: 0 0 100%!important;
+        max-width: 100%!important;
+    }
+
+    .dropdown__text {
+        font-size: 12px!important;
+        line-height: 142.6%!important;
+    }
+
+    .dropdown header {
+        font-size: 13px!important;
+        line-height: 142.6%!important;
+    }
+
+    .dropdown header img {
+        width: 2.5vw!important;
+    }
+
+
+
+
 }
 
 @media screen and (min-width: 320px) and (max-width:767px){
