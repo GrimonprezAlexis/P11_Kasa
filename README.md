@@ -38,11 +38,11 @@ Développer l'ensemble de l'application du Front end au Back-end / data en React
 - Le code React Router pour les routes dans un fichier dédié
 
 ### Technlogies
-HTML, CSS, SASS, Javascript, Jquery, , NodeJS, React, Github
+HTML, CSS, SASS, Javascript, Jquery, , NodeJS, React, Github, Heroku
 
 ### Hébergement
 > Heroku
-[#Projet 11 - Kasa](https://fisheye-app.herokuapp.com/)
+[#Projet 11 - Kasa](https://kasa-app.herokuapp.com/)
 
 
 # React Express Starter Pack
