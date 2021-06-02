@@ -38,11 +38,11 @@ const Error404 = ({ match }) => {
 
         <div className="container">
            <div className="about mt-1rem">
-                <Accordion defaultActiveKey="0" onSelect={e => setActiveKey(e)}>
+                <Accordion defaultActiveKey="0" activeKey={activeKey} onSelect={e => setActiveKey(e)}>
                 {abouts.map((about, index) => {
                     return (
                         <div className="col-md-10 dropdown mb-1rem" key={index}>
-                            <Accordion.Toggle as={Card.Header} eventKey={index}>
+                            <Accordion.Toggle as={Card.Header} eventKey={about.id}>
                                 <span>{about.title}</span>
                                 <img src={
                                     activeKey == index ? 
@@ -51,7 +51,7 @@ const Error404 = ({ match }) => {
                                 } alt="dropdown arrow" className={'arrow'}/>
 
                             </Accordion.Toggle>
-                            <Accordion.Collapse eventKey={index}>
+                            <Accordion.Collapse eventKey={about.id}>
                             <p className="dropdown__text">{about.text}</p>
                             </Accordion.Collapse>
                         </div>
