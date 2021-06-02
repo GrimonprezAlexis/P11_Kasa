@@ -177,7 +177,8 @@
      &__accordion {
         flex-flow: row wrap!important;
         justify-content: space-between!important;
-        align-items: baseline;
+        align-items: baseline!important;
+        margin-bottom: 3rem;
     }
 
 

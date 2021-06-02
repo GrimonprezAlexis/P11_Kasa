@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import '../Home/home.scss'; 
 import Header from '../Header/header';
 import Rates from './rates'
-
-import Carousel from 'react-bootstrap/Carousel'
+import Galerie from './galerie';
 import {Accordion, Card} from 'react-bootstrap';
 
 
@@ -14,7 +13,7 @@ const LogementDetail = ({ match }) => {
     const [pictures, setPictures] = useState([]);
 
     //https://stackoverflow.com/questions/59137427/react-bootstrap-get-current-expanded-accordion
-    const [activeKey, setActiveKey] = useState('0');
+    const [activeKey, setActiveKey] = useState();
 
   //replace componentDidMonth
     useEffect(() => {
@@ -43,20 +42,7 @@ const LogementDetail = ({ match }) => {
         <div className="mt-2rem"></div>
         <div className="container">
             
-            <Carousel>
-            {pictures.map((picture, index) => {
-            return (
-                <Carousel.Item interval={1000} key={index}>
-                    <img
-                    className="coverImg"
-                    src={picture}
-                    alt={`${index} slide`}
-                    key={`${index}`}
-                    />
-                </Carousel.Item>
-            )
-            })}
-            </Carousel>
+            <Galerie pictures={pictures}></Galerie>
 
             <div className="mt-2rem flexBetween">
                 <section className="logementDetail">
@@ -82,7 +68,7 @@ const LogementDetail = ({ match }) => {
             </div>
 
             <div className="flexBetween mt-1rem">
-                <Accordion defaultActiveKey="0" activeKey={activeKey} onSelect={e => setActiveKey(e)} className="logementDetail__accordion">
+                <Accordion onSelect={e => setActiveKey(e)} className="logementDetail__accordion">
                 <div className="col-md-5custom dropdown">
                     <Accordion.Toggle as={Card.Header} eventKey="0" className="radius-5px">
                         <span>Description</span>
@@ -117,6 +103,7 @@ const LogementDetail = ({ match }) => {
                 </div>
                 </Accordion>
             </div>
+            <div className="mb-5rem"></div>
         </div>
         </>
     );
