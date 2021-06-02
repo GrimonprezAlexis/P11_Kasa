@@ -4,12 +4,17 @@ import Header from '../Header/header';
 import Rates from './rates'
 
 import Carousel from 'react-bootstrap/Carousel'
+import {Accordion, Card} from 'react-bootstrap';
+
 
 const LogementDetail = ({ match }) => {
     const [logementById, setLogements] = useState({});
     const [tags, setTags] = useState([]);
     const [equipments, setEquipments] = useState([]);
     const [pictures, setPictures] = useState([]);
+
+    //https://stackoverflow.com/questions/59137427/react-bootstrap-get-current-expanded-accordion
+    const [activeKey, setActiveKey] = useState('0');
 
   //replace componentDidMonth
     useEffect(() => {
@@ -75,19 +80,32 @@ const LogementDetail = ({ match }) => {
                     <Rates logementById={logementById}></Rates>
                 </section>
             </div>
+
             <div className="flexBetween mt-1rem">
+                <Accordion defaultActiveKey="0" activeKey={activeKey} onSelect={e => setActiveKey(e)} className="logementDetail__accordion">
                 <div className="col-md-5custom dropdown">
-                    <header>
+                    <Accordion.Toggle as={Card.Header} eventKey="0" className="radius-5px">
                         <span>Description</span>
-                        <img src={`${window.location.origin}/img/arrow-up.png`} alt="Dropdown arrow"/>
-                    </header>
-                    <p className="dropdown__text">{logementById.description}</p>
+                        <img src={
+                            activeKey === "0" ? 
+                            `${window.location.origin}/img/arrow-down.png` : 
+                            `${window.location.origin}/img/arrow-up.png`
+                        } alt="dropdown arrow" className={'arrow'}/>
+                    </Accordion.Toggle>
+                    <Accordion.Collapse eventKey="0">
+                        <p className="dropdown__text">{logementById.description}</p>
+                    </Accordion.Collapse>
                 </div>
                 <div className="col-md-5custom dropdown">
-                    <header>
+                    <Accordion.Toggle as={Card.Header} eventKey="1" className="radius-5px">
                         <span>Equipements</span>
-                        <img src={`${window.location.origin}/img/arrow-up.png`} alt="Dropdown arrow"/>
-                    </header>
+                        <img src={
+                            activeKey === "1" ? 
+                            `${window.location.origin}/img/arrow-down.png` : 
+                            `${window.location.origin}/img/arrow-up.png`
+                        } alt="dropdown arrow" className={'arrow'}/>
+                    </Accordion.Toggle>
+                    <Accordion.Collapse eventKey="1">
                     <ul className="dropdown__text">
                         {equipments.map((equipment, index) => {
                             return (
@@ -95,7 +113,9 @@ const LogementDetail = ({ match }) => {
                             );
                         })}
                     </ul>
+                    </Accordion.Collapse>
                 </div>
+                </Accordion>
             </div>
         </div>
         </>
