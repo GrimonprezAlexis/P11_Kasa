@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { Redirect } from "react-router-dom";
+
 import '../Home/home.scss'; 
 import Header from '../Header/header';
 import Rates from './rates'
@@ -35,6 +37,9 @@ const LogementDetail = ({ match }) => {
     const getNameIndex = (str, index) => {
         let name = str.split(" ");
         return name[index];
+    }
+    if (Object.keys(logementById).length === 0) {
+        return <Redirect to="/error404" />
     }
     return (
         <>
