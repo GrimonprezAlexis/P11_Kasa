@@ -34,7 +34,10 @@ const LogementDetail = ({ match }) => {
     const fetchLogements = async () => {
         const response = await fetch(`/api/logements/${match.params.id}`);
         if(response.ok){
+            console.log('> test prod');
             const data = await response.json();
+            console.log(data);
+
             setRedirect(false);
             setLogements(data);
             setTags(data.tags);
@@ -46,6 +49,7 @@ const LogementDetail = ({ match }) => {
     }
 
     if(redirect){
+        console.log('>> redirect', redirect);
         return <Redirect to="/error404" />
     }
 
