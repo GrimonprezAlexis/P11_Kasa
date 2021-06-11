@@ -35,16 +35,18 @@ const LogementDetail = ({ match }) => {
         const response = await fetch(`/api/logements/${match.params.id}`);
         if(response.ok){
             console.log('> test prod');
-            const data = await response.json();
-            console.log(data);
+            try {
+                const data = await response.json();
+                setRedirect(false);
+                setLogements(data);
+                setTags(data.tags);
+                setEquipments(data.equipments);
+                setPictures(data.pictures);
 
-            setRedirect(false);
-            setLogements(data);
-            setTags(data.tags);
-            setEquipments(data.equipments);
-            setPictures(data.pictures);
-        } else {
-            setRedirect(true);
+            } catch (error) {
+                console.log('>> logement not found', error);
+                setRedirect(true);                
+            }
         }
     }
 

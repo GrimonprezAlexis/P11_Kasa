@@ -22,13 +22,7 @@ module.exports = (router) => {
         let logement = data.find((logement) => { 
             return logement.id == req.params.id;
         });
-
-        if(logement == null){
-            res.redirect("/error404");
-        } else {
-            res.status(200).send(logement);
-        }
-        
+        res.status(200).send(logement);        
     });
     return router;
 }
