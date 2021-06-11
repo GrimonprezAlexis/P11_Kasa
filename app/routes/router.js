@@ -23,7 +23,7 @@ module.exports = (router) => {
             return logement.id == req.params.id;
         });
 
-        if(!logement){
+        if(logement == null){
             res.redirect("/error404");
         } else {
             res.status(200).send(logement);
