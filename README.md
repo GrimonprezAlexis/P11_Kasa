@@ -71,8 +71,7 @@ npm run client
 ```
 
 ### Author
-Brad Traversy
-[Alexis GRIMONPREZ]()
+[Alexis GRIMONPREZ](https://grimonprez-alexis.herokuapp.com/)
 
 ### Version
 1.0.0

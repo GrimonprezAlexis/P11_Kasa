@@ -16,6 +16,14 @@ const LogementDetail = ({ match }) => {
 
     //https://stackoverflow.com/questions/59137427/react-bootstrap-get-current-expanded-accordion
     const [activeKey, setActiveKey] = useState();
+    const [redirect, setRedirect] = useState();
+
+    //Splt string and get the index of string
+    //Ex: Alexis Grimonprez
+    const getNameIndex = (str, index) => {
+        let name = str.split(" ");
+        return name[index];
+    }
 
   //replace componentDidMonth
     useEffect(() => {
@@ -25,22 +33,22 @@ const LogementDetail = ({ match }) => {
     //Get the logements from API
     const fetchLogements = async () => {
         const response = await fetch(`/api/logements/${match.params.id}`);
-        const data = await response.json();
-        setLogements(data);
-        setTags(data.tags);
-        setEquipments(data.equipments);
-        setPictures(data.pictures);
+        if(response.ok){
+            const data = await response.json();
+            setRedirect(false);
+            setLogements(data);
+            setTags(data.tags);
+            setEquipments(data.equipments);
+            setPictures(data.pictures);
+        } else {
+            setRedirect(true);
+        }
     }
 
-    //Splt string and get the index of string
-    //Ex: Alexis Grimonprez
-    const getNameIndex = (str, index) => {
-        let name = str.split(" ");
-        return name[index];
-    }
-    if (Object.keys(logementById).length === 0) {
+    if(redirect){
         return <Redirect to="/error404" />
     }
+
     return (
         <>
         <Header isHomePage={false}></Header>
