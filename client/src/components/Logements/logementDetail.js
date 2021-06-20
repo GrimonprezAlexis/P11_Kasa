@@ -5,8 +5,6 @@ import '../Home/home.scss';
 import Header from '../Header/header';
 import Rates from './rates'
 import Galerie from './galerie';
-import {Accordion, Card} from 'react-bootstrap';
-
 
 const LogementDetail = ({ match }) => {
     const [logementById, setLogements] = useState({});
@@ -14,7 +12,6 @@ const LogementDetail = ({ match }) => {
     const [equipments, setEquipments] = useState([]);
     const [pictures, setPictures] = useState([]);
 
-    //https://stackoverflow.com/questions/59137427/react-bootstrap-get-current-expanded-accordion
     const [activeKey, setActiveKey] = useState();
     const [redirect, setRedirect] = useState();
 
@@ -51,7 +48,6 @@ const LogementDetail = ({ match }) => {
     }
 
     if(redirect){
-        console.log('>> redirect', redirect);
         return <Redirect to="/error404" />
     }
 
@@ -87,40 +83,40 @@ const LogementDetail = ({ match }) => {
             </div>
 
             <div className="flexBetween mt-1rem">
-                <Accordion onSelect={e => setActiveKey(e)} className="logementDetail__accordion">
-                <div className="col-md-5custom dropdown">
-                    <Accordion.Toggle as={Card.Header} eventKey="0" className="radius-5px">
-                        <span>Description</span>
-                        <img src={
-                            activeKey === "0" ? 
-                            `${window.location.origin}/img/arrow-down.png` : 
-                            `${window.location.origin}/img/arrow-up.png`
-                        } alt="dropdown arrow" className={'arrow'}/>
-                    </Accordion.Toggle>
-                    <Accordion.Collapse eventKey="0">
-                        <p className="dropdown__text">{logementById.description}</p>
-                    </Accordion.Collapse>
+                <div className="logementDetail__accordion accordion">
+                    <div className="col-md-5custom dropdown">
+                        <div className="radius-5px card-header" onClick={e => setActiveKey("1")}>
+                            <span>Description</span>
+                            <img src={
+                                activeKey === "1" ? 
+                                `${window.location.origin}/img/arrow-down.png` : 
+                                `${window.location.origin}/img/arrow-up.png`
+                            } alt="dropdown arrow" className={'arrow'}/>
+                        </div>
+                        <div className={activeKey === "1" ? 'show': 'hide'} >
+                            <p className="dropdown__text">{logementById.description}</p>
+                        </div>
+                    </div>
+                    <div className="col-md-5custom dropdown">
+                        <div className="radius-5px card-header" onClick={e => setActiveKey("2")}>
+                            <span>Equipements</span>
+                            <img src={
+                                activeKey === "2" ? 
+                                `${window.location.origin}/img/arrow-down.png` : 
+                                `${window.location.origin}/img/arrow-up.png`
+                            } alt="dropdown arrow" className={'arrow'}/>
+                        </div>
+                        <div className={activeKey === "2" ? 'show': 'hide'}>
+                        <ul className="dropdown__text">
+                            {equipments.map((equipment, index) => {
+                                return (
+                                    <li key={index}><span aria-hidden="false">{equipment}</span></li>
+                                );
+                            })}
+                        </ul>
+                        </div>
+                    </div>
                 </div>
-                <div className="col-md-5custom dropdown">
-                    <Accordion.Toggle as={Card.Header} eventKey="1" className="radius-5px">
-                        <span>Equipements</span>
-                        <img src={
-                            activeKey === "1" ? 
-                            `${window.location.origin}/img/arrow-down.png` : 
-                            `${window.location.origin}/img/arrow-up.png`
-                        } alt="dropdown arrow" className={'arrow'}/>
-                    </Accordion.Toggle>
-                    <Accordion.Collapse eventKey="1">
-                    <ul className="dropdown__text">
-                        {equipments.map((equipment, index) => {
-                            return (
-                                <li key={index}><span aria-hidden="false">{equipment}</span></li>
-                            );
-                        })}
-                    </ul>
-                    </Accordion.Collapse>
-                </div>
-                </Accordion>
             </div>
             <div className="mb-5rem"></div>
         </div>

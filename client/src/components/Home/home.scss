@@ -180,8 +180,14 @@
         align-items: baseline!important;
         margin-bottom: 3rem;
     }
+ }
 
+ .show {
+     display: block;
+ }
 
+ .hide {
+     display: none;
  }
 
 .about {
@@ -319,9 +325,24 @@
         width: 2.5vw!important;
     }
 
-
-
-
+    //Carousel
+    .showOnMobile {
+        display: block!important;
+    }
+    .hideOnMobile {
+        display: none!important;
+    }
+    .error {
+        &__404 {
+            font-size: 96px!important;            
+        }
+        &__message {
+            font-size: 18px!important; 
+        }
+        &__backHome {
+            font-size: 14px!important; 
+        }
+    }
 }
 
 @media screen and (min-width: 320px) and (max-width:767px){
@@ -337,7 +358,24 @@
         }
     }
 
-    
+    //Carousel
+    .showOnMobile {
+        display: block!important;
+    }
+    .hideOnMobile {
+        display: none!important;
+    }
+    .error {
+        &__404 {
+            font-size: 96px!important;            
+        }
+        &__message {
+            font-size: 18px!important; 
+        }
+        &__backHome {
+            font-size: 14px!important; 
+        }
+    }
 }
 
 @media screen and (min-width: 450px) and (max-width:992px){
