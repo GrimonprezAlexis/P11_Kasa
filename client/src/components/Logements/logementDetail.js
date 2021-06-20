@@ -31,7 +31,6 @@ const LogementDetail = ({ match }) => {
     const fetchLogements = async () => {
         const response = await fetch(`/api/logements/${match.params.id}`);
         if(response.ok){
-            console.log('> test prod');
             try {
                 const data = await response.json();
                 setRedirect(false);
