@@ -5,6 +5,10 @@ Projet 11 - Développez une application Web avec React et React Router
 ### Fonction
 Développeur Front-end
 
+### Maquette
+- [Maquette](https://www.figma.com/file/bAnXDNqRKCRRP8mY2gcb5p/UI-Design-Kasa-FR?node-id=4%3A1)
+
+
 ### Details du projet
 Le site actuel a été codé il y à plus de 10 ans en ASP.NET, la CTO souhaite une refonte totale pour passer en stack JavaScript / NodeJS / React avec de nouvelles maquettes.
 
